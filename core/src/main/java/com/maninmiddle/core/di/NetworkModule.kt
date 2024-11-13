@@ -8,7 +8,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 val networkModule = module {
     single {
         Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl("https://6734a278a042ab85d11b050a.mockapi.io/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
     }

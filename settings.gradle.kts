@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "HeadHunter"
 include(":app")
 include(":core")
+include(":feature_search")

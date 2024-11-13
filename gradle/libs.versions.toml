@@ -14,6 +14,8 @@ ksp = "1.9.0-1.0.13"
 retrofit = "2.9.0"
 moshi = "2.4.0"
 jetbrainsKotlinJvm = "1.9.0"
+adaptersDelegate = "4.3.2"
+shimmer_version = "0.5.0"
 
 
 [libraries]
@@ -29,7 +31,7 @@ koin_core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin"
 koin_android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 moshi_converter = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "moshi" }
 retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-
+adapterDelegates = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adaptersDelegate" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

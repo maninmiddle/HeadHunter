@@ -5,19 +5,19 @@ import com.squareup.moshi.Json
 
 data class VacanciesDto(
 
-    @field:Json(name = "id") var id: String? = null,
-    @field:Json(name = "lookingNumber") var lookingNumber: Int? = null,
-    @field:Json(name = "title") var title: String? = null,
-    @field:Json(name = "address") var addressDto: AddressDto? = AddressDto(),
-    @field:Json(name = "company") var company: String? = null,
-    @field:Json(name = "experience") var experienceDto: ExperienceDto? = ExperienceDto(),
-    @field:Json(name = "publishedDate") var publishedDate: String? = null,
-    @field:Json(name = "isFavorite") var isFavorite: Boolean? = null,
-    @field:Json(name = "salary") var salaryDto: SalaryDto? = SalaryDto(),
-    @field:Json(name = "schedules") var schedules: ArrayList<String> = arrayListOf(),
-    @field:Json(name = "appliedNumber") var appliedNumber: Int? = null,
-    @field:Json(name = "description") var description: String? = null,
-    @field:Json(name = "responsibilities") var responsibilities: String? = null,
-    @field:Json(name = "questions") var questions: ArrayList<String> = arrayListOf()
+    @field:Json(name = "id") var id: String,
+    @field:Json(name = "lookingNumber") var lookingNumber: Int,
+    @field:Json(name = "title") var title: String,
+    @field:Json(name = "address") var addressDto: AddressDto,
+    @field:Json(name = "company") var company: String,
+    @field:Json(name = "experience") var experienceDto: ExperienceDto,
+    @field:Json(name = "publishedDate") var publishedDate: String,
+    @field:Json(name = "isFavorite") var isFavorite: Boolean,
+    @field:Json(name = "salary") var salaryDto: SalaryDto,
+    @field:Json(name = "schedules") var schedules: List<String>,
+    @field:Json(name = "appliedNumber") var appliedNumber: Int,
+    @field:Json(name = "description") var description: String,
+    @field:Json(name = "responsibilities") var responsibilities: String,
+    @field:Json(name = "questions") var questions: List<String>
 
 )
