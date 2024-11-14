@@ -9,15 +9,16 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.maninmiddle.feature_search.R
 import com.maninmiddle.feature_search.databinding.FragmentSearchBinding
-import com.maninmiddle.feature_search.presentation.search.adapters.offer.OfferAdapter
-import com.maninmiddle.feature_search.presentation.search.adapters.vacancies.VacanciesAdapter
+import com.maninmiddle.feature_search.presentation.adapters.offer.OfferAdapter
+import com.maninmiddle.feature_search.presentation.adapters.vacancies.VacanciesAdapter
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchFragment : Fragment() {
     private var _binding: FragmentSearchBinding? = null
-    val viewModel by viewModel<SearchViewModel>()
+    private val viewModel by viewModel<SearchViewModel>()
     private val binding: FragmentSearchBinding
         get() = _binding ?: throw RuntimeException("FragmentSearchBinding == null")
 
@@ -35,6 +36,7 @@ class SearchFragment : Fragment() {
         setupOffersRecyclerView()
         setupVacanciesRecyclerView()
 
+
     }
 
     private fun setupVacanciesRecyclerView() {
@@ -43,7 +45,8 @@ class SearchFragment : Fragment() {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.state.collect {state ->
                     if (!state.isLoading) {
-                        vacanciesAdapter.items = state.vacancies
+                        vacanciesAdapter.items = state.vacancies?.take(2)
+                        setupVacanciesSize(state.vacancies?.size ?: 0)
                     }
                 }
             }
@@ -51,6 +54,15 @@ class SearchFragment : Fragment() {
         binding.rvVacancies.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.rvVacancies.adapter = vacanciesAdapter
+    }
+
+    private fun setupVacanciesSize(total: Int) {
+        val rightCountedVacanciesText =  when {
+            total % 10 == 1 && total % 100 == 11 -> "$total вакансия"
+            total % 10 in 2..4 && (total % 100 !in 12..24) -> "$total вакансии"
+            else -> "$total вакансий"
+        }
+        binding.moreButton.text = getString(R.string.stringMoreVacancies, rightCountedVacanciesText)
     }
 
     private fun setupOffersRecyclerView() {

@@ -1,4 +1,4 @@
-package com.maninmiddle.feature_search.presentation.search.adapters.vacancies
+package com.maninmiddle.feature_search.presentation.adapters.vacancies
 
 import androidx.recyclerview.widget.DiffUtil
 import com.maninmiddle.feature_search.domain.models.VacanciesModel

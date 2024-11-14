@@ -1,4 +1,4 @@
-package com.maninmiddle.feature_search.presentation.search.adapters.offer
+package com.maninmiddle.feature_search.presentation.adapters.offer
 
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.maninmiddle.feature_search.domain.models.OfferModel

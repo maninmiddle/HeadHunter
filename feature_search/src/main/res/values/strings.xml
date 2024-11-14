@@ -5,4 +5,6 @@
     <string name="stringNowLooking">Сейчас просматривает %d человек</string>
     <string name="stringPublicationDate">Опубликовано %s</string>
     <string name="stringReply">Откликнуться</string>
+    <string name="stringMoreVacancies">Еще %s</string>
+    <string name="stringAdditionalFilter">По соотвествию</string>
 </resources>

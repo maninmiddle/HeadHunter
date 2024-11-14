@@ -1,4 +1,4 @@
-package com.maninmiddle.feature_search.presentation.search.adapters.vacancies
+package com.maninmiddle.feature_search.presentation.adapters.vacancies
 
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.maninmiddle.feature_search.R
