@@ -1,7 +1,7 @@
-package com.maninmiddle.feature_search.presentation.adapters.vacancies
+package com.maninmiddle.core.presentation.adapters
 
 import androidx.recyclerview.widget.DiffUtil
-import com.maninmiddle.feature_search.domain.models.VacanciesModel
+import com.maninmiddle.core.domain.models.VacanciesModel
 
 class VacanciesDiffCallback: DiffUtil.ItemCallback<VacanciesModel>() {
     override fun areItemsTheSame(oldItem: VacanciesModel, newItem: VacanciesModel): Boolean {

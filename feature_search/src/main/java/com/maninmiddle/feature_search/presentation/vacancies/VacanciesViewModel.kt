@@ -3,14 +3,14 @@ package com.maninmiddle.feature_search.presentation.vacancies
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.maninmiddle.core.domain.VacanciesRepository
 import com.maninmiddle.core.util.ApiState
-import com.maninmiddle.feature_search.domain.repository.SearchRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class VacanciesViewModel(
-    private val repository: SearchRepository
+    private val repository: VacanciesRepository
 ) : ViewModel() {
     private val _state = MutableStateFlow(VacanciesUIState())
     val state: StateFlow<VacanciesUIState>

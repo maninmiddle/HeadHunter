@@ -3,6 +3,7 @@ package com.maninmiddle.feature_search.presentation.search
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.maninmiddle.core.domain.VacanciesRepository
 import com.maninmiddle.core.util.ApiState
 import com.maninmiddle.feature_search.domain.repository.SearchRepository
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -10,7 +11,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class SearchViewModel(
-    private val repository: SearchRepository
+    private val searchRepository: SearchRepository,
+    private val vacanciesRepository: VacanciesRepository
 ) : ViewModel() {
     private val _state = MutableStateFlow(SearchUIState())
 
@@ -29,7 +31,7 @@ class SearchViewModel(
                 error = null,
                 vacancies = null
             )
-            when (val result = repository.getVacancies()) {
+            when (val result = vacanciesRepository.getVacancies()) {
                 is ApiState.Success -> {
                     _state.value = state.value.copy(
                         isLoading = false,
@@ -58,7 +60,7 @@ class SearchViewModel(
                 offers = null,
                 error = null
             )
-            when (val result = repository.getOffers()) {
+            when (val result = searchRepository.getOffers()) {
                 is ApiState.Success -> {
                     _state.value = state.value.copy(
                         isLoading = false,

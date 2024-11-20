@@ -26,11 +26,11 @@
             android:layout_height="match_parent" >
 
             <ImageView
-                android:id="@+id/searchIcon"
+                android:id="@+id/backIcon"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/search_icon"
+                android:src="@drawable/back_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -41,7 +41,7 @@
                 android:hint="@string/stringSearchQuery"
                 android:textSize="15sp"
                 android:layout_marginStart="10dp"
-                app:layout_constraintStart_toEndOf="@id/searchIcon"
+                app:layout_constraintStart_toEndOf="@id/backIcon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:background="@android:color/transparent"

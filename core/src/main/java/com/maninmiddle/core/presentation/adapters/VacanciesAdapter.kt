@@ -1,7 +1,7 @@
-package com.maninmiddle.feature_search.presentation.adapters.vacancies
+package com.maninmiddle.core.presentation.adapters
 
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
-import com.maninmiddle.feature_search.domain.models.VacanciesModel
+import com.maninmiddle.core.domain.models.VacanciesModel
 
 class VacanciesAdapter() :
     AsyncListDifferDelegationAdapter<VacanciesModel>(VacanciesDiffCallback()) {

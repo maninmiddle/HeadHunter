@@ -1,0 +1,9 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="stringFavourite">Избранное</string>
+    <string name="stringNowLooking">Сейчас просматривает %d человек</string>
+    <string name="stringPublicationDate">Опубликовано %s</string>
+    <string name="stringReply">Откликнуться</string>
+    <string name="stringVacanciesCount">%s</string>
+</resources>

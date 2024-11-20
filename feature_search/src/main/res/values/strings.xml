@@ -7,4 +7,5 @@
     <string name="stringReply">Откликнуться</string>
     <string name="stringMoreVacancies">Еще %s</string>
     <string name="stringAdditionalFilter">По соотвествию</string>
+    <string name="stringVacanciesCount">%s</string>
 </resources>

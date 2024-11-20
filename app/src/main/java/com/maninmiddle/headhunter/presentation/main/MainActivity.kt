@@ -3,6 +3,7 @@ package com.maninmiddle.headhunter.presentation.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.feature_favourite.presentation.FavouriteFragment
 import com.maninmiddle.core.util.MainActivityFragmentContract
 import com.maninmiddle.feature_search.presentation.search.SearchFragment
 import com.maninmiddle.headhunter.R
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity(), MainActivityFragmentContract {
                 }
 
                 R.id.menuFav -> {
-                    // release
+                    replaceFragment(FavouriteFragment())
                     true
                 }
 
@@ -61,5 +62,9 @@ class MainActivity : AppCompatActivity(), MainActivityFragmentContract {
 
     override fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(binding.frameLayout.id, fragment).commit()
+    }
+
+    override fun setNotificationCount(count: Int) {
+        binding.bottomNav.getOrCreateBadge(R.id.menuFav).number = count
     }
 }

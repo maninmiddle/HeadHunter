@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
+apply(from = "../ktlint.gradle")
+
 android {
     namespace = "com.maninmiddle.core"
     compileSdk = 34
@@ -23,6 +25,9 @@ android {
             )
         }
     }
+    buildFeatures {
+        viewBinding = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -34,6 +39,7 @@ android {
 
 dependencies {
     implementation(libs.koin.core)
+    implementation(libs.adapterDelegates)
     implementation(libs.koin.android)
     implementation(libs.retrofit2)
     implementation(libs.moshi.converter)

@@ -1,4 +1,4 @@
-package com.maninmiddle.feature_search.domain.models
+package com.maninmiddle.core.domain.models
 
 
 data class VacanciesModel(

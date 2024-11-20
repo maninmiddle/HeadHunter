@@ -1,6 +1,8 @@
 package com.maninmiddle.headhunter.app
 
 import android.app.Application
+import com.example.feature_favourite.di.favouriteModule
+import com.maninmiddle.core.di.coreModule
 import com.maninmiddle.core.di.networkModule
 import com.maninmiddle.feature_search.di.searchModule
 import org.koin.android.ext.koin.androidContext
@@ -14,7 +16,7 @@ class App : Application() {
         startKoin {
             androidLogger(Level.ERROR)
             androidContext(this@App)
-            modules(networkModule, searchModule)
+            modules(networkModule, searchModule, coreModule, favouriteModule)
         }
     }
 }

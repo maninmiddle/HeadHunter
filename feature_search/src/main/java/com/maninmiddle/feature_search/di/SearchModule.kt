@@ -9,7 +9,7 @@ import org.koin.dsl.module
 
 val searchModule = module {
     single<SearchRepository> { SearchRepositoryImpl(get()) }
-    viewModel { SearchViewModel(get()) }
+    viewModel { SearchViewModel(get(), get()) }
 
     viewModel { VacanciesViewModel(get()) }
 }

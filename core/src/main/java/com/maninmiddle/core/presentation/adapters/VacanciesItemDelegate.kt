@@ -1,10 +1,11 @@
-package com.maninmiddle.feature_search.presentation.adapters.vacancies
+package com.maninmiddle.core.presentation.adapters
 
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
-import com.maninmiddle.feature_search.R
-import com.maninmiddle.feature_search.databinding.VacancyItemBinding
-import com.maninmiddle.feature_search.domain.models.VacanciesModel
-import com.maninmiddle.feature_search.util.formatDate
+import com.maninmiddle.core.R
+import com.maninmiddle.core.databinding.VacancyItemBinding
+import com.maninmiddle.core.domain.models.VacanciesModel
+import com.maninmiddle.core.util.formatDate
+
 
 fun vacanciesItemDelegate() =
     adapterDelegateViewBinding<VacanciesModel, VacanciesModel, VacancyItemBinding>(

@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
+apply(from = "../ktlint.gradle")
+
 android {
     namespace = "com.maninmiddle.headhunter"
     compileSdk = 34
@@ -44,6 +46,7 @@ dependencies {
     implementation(libs.koin.android)
     implementation(project(":core"))
     implementation(project(":feature_search"))
+    implementation(project(":feature_favourite"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

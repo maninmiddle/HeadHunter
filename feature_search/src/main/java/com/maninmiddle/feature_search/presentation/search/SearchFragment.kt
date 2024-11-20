@@ -9,11 +9,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.maninmiddle.core.presentation.adapters.VacanciesAdapter
 import com.maninmiddle.core.util.MainActivityFragmentContract
 import com.maninmiddle.feature_search.R
 import com.maninmiddle.feature_search.databinding.FragmentSearchBinding
 import com.maninmiddle.feature_search.presentation.adapters.offer.OfferAdapter
-import com.maninmiddle.feature_search.presentation.adapters.vacancies.VacanciesAdapter
 import com.maninmiddle.feature_search.presentation.vacancies.VacanciesFragment
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -55,6 +55,8 @@ class SearchFragment : Fragment() {
                     if (!state.isLoading) {
                         vacanciesAdapter.items = state.vacancies?.take(2)
                         setupVacanciesSize(state.vacancies?.size ?: 0)
+                        setupVacanciesFavouritesCount(state.vacancies?.filter { vacancy -> vacancy.isFavorite }?.size
+                            ?: 0)
                     }
                 }
             }
@@ -62,6 +64,11 @@ class SearchFragment : Fragment() {
         binding.rvVacancies.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.rvVacancies.adapter = vacanciesAdapter
+    }
+
+    private fun setupVacanciesFavouritesCount(count: Int) {
+        val mainActivity = requireActivity() as MainActivityFragmentContract
+        mainActivity.setNotificationCount(count)
     }
 
     private fun setupVacanciesSize(total: Int) {

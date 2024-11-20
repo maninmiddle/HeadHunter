@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="stringNowLooking">Сейчас просматривает %d человек</string>
+    <string name="stringPublicationDate">Опубликовано %s</string>
+    <string name="stringReply">Откликнуться</string>
+</resources>
