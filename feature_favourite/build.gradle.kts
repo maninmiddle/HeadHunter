@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
-apply(from = "../ktlint.gradle")
+
 
 android {
     namespace = "com.example.feature_favourite"
